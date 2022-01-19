@@ -12,6 +12,9 @@
 		C21D76AE2798AD360007384D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21D76AC2798AD360007384D /* Main.storyboard */; };
 		C21D76B02798AD370007384D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C21D76AF2798AD370007384D /* Assets.xcassets */; };
 		C21D76B32798AD370007384D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21D76B12798AD370007384D /* LaunchScreen.storyboard */; };
+		C21D76C12798B1A30007384D /* GarageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D76C02798B1A30007384D /* GarageTableViewController.swift */; };
+		C21D76C32798B63B0007384D /* CarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D76C22798B63B0007384D /* CarDetailViewController.swift */; };
+		C21D76C52798B6F60007384D /* VehicleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D76C42798B6F60007384D /* VehicleType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		C21D76AF2798AD370007384D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C21D76B22798AD370007384D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C21D76B42798AD370007384D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C21D76C02798B1A30007384D /* GarageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageTableViewController.swift; sourceTree = "<group>"; };
+		C21D76C22798B63B0007384D /* CarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewController.swift; sourceTree = "<group>"; };
+		C21D76C42798B6F60007384D /* VehicleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +60,10 @@
 		C21D76A52798AD360007384D /* Garage */ = {
 			isa = PBXGroup;
 			children = (
+				C21D76BC2798AFED0007384D /* Model */,
+				C21D76BD2798B0040007384D /* Views */,
+				C21D76BB2798AFE30007384D /* Controllers */,
 				C21D76BA2798AD4A0007384D /* Resources */,
-				C21D76AC2798AD360007384D /* Main.storyboard */,
 			);
 			path = Garage;
 			sourceTree = "<group>";
@@ -70,6 +78,47 @@
 				C21D76B42798AD370007384D /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C21D76BB2798AFE30007384D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C21D76BF2798B0360007384D /* Views Controller */,
+				C21D76BE2798B0280007384D /* Model Controllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C21D76BC2798AFED0007384D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C21D76C42798B6F60007384D /* VehicleType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C21D76BD2798B0040007384D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C21D76AC2798AD360007384D /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C21D76BE2798B0280007384D /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		C21D76BF2798B0360007384D /* Views Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C21D76C02798B1A30007384D /* GarageTableViewController.swift */,
+				C21D76C22798B63B0007384D /* CarDetailViewController.swift */,
+			);
+			path = "Views Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +192,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C21D76C32798B63B0007384D /* CarDetailViewController.swift in Sources */,
+				C21D76C12798B1A30007384D /* GarageTableViewController.swift in Sources */,
 				C21D76A72798AD360007384D /* AppDelegate.swift in Sources */,
+				C21D76C52798B6F60007384D /* VehicleType.swift in Sources */,
 				C21D76A92798AD360007384D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
