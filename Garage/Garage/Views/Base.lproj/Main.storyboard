@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="on6-gN-Jye" detailTextLabel="40Y-ei-oB9" style="IBUITableViewCellStyleValue1" id="7Z1-fG-muI">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="carCell" textLabel="on6-gN-Jye" detailTextLabel="40Y-ei-oB9" style="IBUITableViewCellStyleValue1" id="7Z1-fG-muI">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Z1-fG-muI" id="C4Y-Bw-vOX">
@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="-13" y="10"/>
         </scene>
-        <!--View Controller-->
+        <!--Car Detail View Controller-->
         <scene sceneID="1Ni-Ta-dkH">
             <objects>
-                <viewController id="B3S-N1-LFo" sceneMemberID="viewController">
+                <viewController id="B3S-N1-LFo" customClass="CarDetailViewController" customModule="Garage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZdS-33-wlR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,6 +90,7 @@
                                     </textField>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTt-ma-Cn0">
                                         <rect key="frame" x="0.0" y="162" width="374" height="216"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pickerView>
                                 </subviews>
                             </stackView>
@@ -102,6 +103,9 @@
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Clear"/>
+                                        <connections>
+                                            <action selector="clearDetailsOfCar:" destination="B3S-N1-LFo" eventType="touchUpInside" id="ztv-e7-u6E"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phq-3x-oeU">
                                         <rect key="frame" x="192" y="0.0" width="182" height="31"/>
@@ -109,6 +113,9 @@
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Delete"/>
+                                        <connections>
+                                            <action selector="deleteCar:" destination="B3S-N1-LFo" eventType="touchUpInside" id="gxg-R7-FHE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -124,7 +131,19 @@
                             <constraint firstItem="VQB-WT-c7O" firstAttribute="top" secondItem="FoL-Hr-u7P" secondAttribute="top" constant="10" id="dt0-r7-xc0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ehe-fI-v20"/>
+                    <navigationItem key="navigationItem" id="ehe-fI-v20">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="fQZ-3u-Mxz">
+                            <connections>
+                                <action selector="saveCarDetails:" destination="B3S-N1-LFo" id="ilj-qd-yOr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="carTypePicker" destination="pTt-ma-Cn0" id="xcL-dG-DiB"/>
+                        <outlet property="makeTextField" destination="Bk7-ea-Swj" id="cig-xO-0lm"/>
+                        <outlet property="modelTextField" destination="e5D-Oa-Mhb" id="TtK-oc-qKF"/>
+                        <outlet property="yearTextField" destination="bcT-Ul-QBN" id="gVg-As-Zpc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S9v-SX-yRi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,7 +167,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JX8-o5-MbJ"/>
+        <segue reference="Fgj-5k-Tg1"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
